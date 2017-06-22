@@ -7,11 +7,11 @@
  */
 
 /**
- * Description of SkillsModel
+ * Description of ProjetModel
  *
  * @author mathieu
  */
-class SkillsModel extends CI_Model {
+class ProjetModel extends CI_Model {
 
     public function __construct() {
         parent::__construct();
@@ -31,7 +31,7 @@ class SkillsModel extends CI_Model {
     }
 
     public function getAll() {
-        $query = $this->db->query("SELECT * FROM skills");
+        $query = $this->db->query("SELECT * FROM projet");
         return $query->result_array();
     }
 

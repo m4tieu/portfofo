@@ -28,13 +28,13 @@
                             <a href="#page-top"></a>
                         </li>
                         <li>
-                            <a class="page-scroll" href="#services"><b>Moi</b></a>
+                            <a class="page-scroll" href="#moi"><b>Moi</b></a>
                         </li>
                         <li>
-                            <a class="page-scroll" href="#portfolio"><b>Mes projets</b></a>
+                            <a class="page-scroll" href="#projets"><b>Mes projets</b></a>
                         </li>
                         <li>
-                            <a class="page-scroll" href="#about"><b>Mon parcours</b></a>
+                            <a class="page-scroll" href="#parcours"><b>Mon parcours</b></a>
                         </li>
                         <li>
                             <a class="page-scroll" href="#reseaux"><b>Mes reseaux sociaux</b></a>
@@ -49,31 +49,41 @@
         <header>
             <div class="container">
                 <div class="intro-text">
-                    <div class="intro-heading">M<a href="https://fr.wikipedia.org/wiki/4_(nombre)">4</a>tieu Dev</div>
-                    <div class="intro-footing"> Application Web / Application mobile</div>
+                    <div class="intro-heading"><?php echo $head['titre_debut']; ?><a href="<?php echo $head['url']; ?>"><?php echo $head['titre_entre']; ?></a><?php echo $head['titre_fin']; ?></div>
+                    <div class="intro-footing"><?php echo $head['sous_titre']; ?></div>
                     <br>
                     <br>
                     <br>
                     <br>
-                    <a href="#services" class="page-scroll btn btn-xl"><img src="../ressources/img/icon/arrow.png" class="img-responsive" alt=""></a>
+                    <a href="#moi" class="page-scroll btn btn-xl"><img src="../ressources/img/icon/arrow.png" class="img-responsive" alt=""></a>
                 </div>
             </div>
         </header>
-        <section id="services">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <h2 class="section-heading">Qui suis-je ?</h2>
-                        <?php
-                        foreach ($skills as $sk) {
-                            echo $sk['nom_competences'] . ' ';
-                        }
-                        ?>
+        <?php
+        foreach ($desc as $sk) {
+            ?>
+            <section id="moi">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 text-center">
+                            <h2 class="section-heading">
+                                <?php echo $sk['titre_section']; ?>
+                            </h2>
+                            <br>
+                            <br>
+                            <p><b>
+                                    <?php
+                                    echo $sk['texte'] . ' ';
+                                    ?>
+                                </b></p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <section id="portfolio" class="bg-light-gray">
+            </section>
+            <?php
+        }
+        ?>
+        <section id="projets" class="bg-light-gray">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 text-center">
@@ -87,20 +97,20 @@
                 <div class="row">
                     <div class="col-md-4 col-sm-6 portfolio-item">
                         <a href="https://github.com/fabrique-beWeb/findMycOOP_lunel"><img src="../ressources/img/projets/FMC.png" class="img-responsive" alt=""></a>
-                        <div class="portfolio-caption">
+                        <div class="portfolio-caption text-center">
                             <h4>Find My cOOp</h4>
                             <p class="text-muted">Site hybride coopératif / gestion de projet</p>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-6 portfolio-item">
+                    <div class="col-md-4 col-sm-6 portfolio-item text-center">
                         <a href="http://fabrique-beweb.com/"><img src="../ressources/img/projets/BEWEB.png" class="img-responsive" alt=""></a>
                         <div class="portfolio-caption">
                             <h4>BeWeb v1</h4>
                             <p class="text-muted">Site web de l'école BeWeB</p>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-6 portfolio-item">
-                        <a href="http://feelu.fr/"><img src="../ressources/img/projets/FEELU.png" class="img-responsive" alt=""></a>
+                    <div class="col-md-4 col-sm-6 portfolio-item text-center">
+                        <a href="http://feelu.fr/"><img class="img-responsive" src="../ressources/img/projets/FEELU.png" alt=""></a>
                         <div class="portfolio-caption">
                             <h4>Feel U</h4>
                             <p class="text-muted">Application Web / Android / IOS</p>
@@ -109,7 +119,7 @@
                 </div>
             </div>
         </section>
-        <section id="about">
+        <section id="parcours">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 text-center">
@@ -176,7 +186,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 text-center">
-                        <h1 class="section-heading">Retrouver moi sur les reseaux</h1>
+                        <h1 class="section-heading"><?php echo $rs[0]["titre_section"]; ?></h1>
                     </div>
                 </div>
                 <br>
@@ -186,17 +196,17 @@
                 <div class="row">
                     <div class="text-center">
                         <ul class="list-inline social-buttons">
-                            <li><a href="https://twitter.com/M4tieuDev"><i class="fa fa-twitter"></i></a>
+                            <li><a href="<?php echo $rs[1]["url"]; ?>"><i class="<?php echo $rs[1]["image"]; ?>"></i></a>
                             </li>
-                            <li><a href="https://www.facebook.com/m4tieuDev"><i class="fa fa-facebook"></i></a>
+                            <li><a href="<?php echo $rs[2]["url"]; ?>"><i class="<?php echo $rs[2]["image"]; ?>"></i></a>
                             </li>
-                            <li><a href="https://www.linkedin.com/in/m4tieudev/"><i class="fa fa-linkedin"></i></a>
+                            <li><a href="<?php echo $rs[3]["url"]; ?>"><i class="<?php echo $rs[3]["image"]; ?>"></i></a>
                             </li>
-                            <li><a href="https://github.com/m4tieu"><i class="fa fa-github-alt"></i></a>
+                            <li><a href="<?php echo $rs[4]["url"]; ?>"><i class="<?php echo $rs[4]["image"]; ?>"></i></a>
                             </li>
-                            <li><a href="https://bitbucket.org/m4tieu/"><i class="fa fa-bitbucket"></i></a>
+                            <li><a href="<?php echo $rs[5]["url"]; ?>"><i class="<?php echo $rs[5]["image"]; ?>"></i></a>
                             </li>
-                            <li><a href="https://simplon-co.slack.com/messages/@m4tieu/"><i class="fa fa-slack"></i></a>
+                            <li><a href="<?php echo $rs[6]["url"]; ?>"><i class="<?php echo $rs[6]["image"]; ?>"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -255,7 +265,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <span class="copyright">Copyright &copy; 2017<a href="http://www.shafou.com/"> m4tieu</a> all rights reserved.</span>
+                        <span class="copyright"><?php echo $foot["texte_debut"]; ?><a href="<?php echo $foot["url"]; ?>"> <?php echo $foot["texte_entre"]; ?></a> <?php echo $foot["texte_fin"]; ?></span>
                     </div>
                 </div>
             </div>
